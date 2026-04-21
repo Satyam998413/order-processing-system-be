@@ -10,7 +10,7 @@ const router = express.Router();
  * Upload CSV/Excel file with orders
  * Auth: Required
  */
-router.post('/upload', uploadFile, handleUploadError, uploadOrders);
+router.post('/upload', authMiddleware, uploadFile, handleUploadError, uploadOrders);
 
 /**
  * GET /api/orders/:orderId
