@@ -81,7 +81,7 @@ export const getOrderById = async (req, res, next) => {
       throw new ValidationError('customerId query parameter is required');
     }
 
-    const order = await Order.findById(orderId, customerId);
+    const order = await Order.findById(orderId&&orderId, customerId);
 
     if (!order) {
       return res.status(404).json({
